@@ -50,3 +50,10 @@ def add_specific_files():
         with open("src/utils.py", "w") as utils_file:
             utils_file.write("")
 add_specific_files()
+
+def make_commits():
+    for i in range(5):  # Change 5 to the number of commits you want
+        commit_message = f"Commit {i+1}"
+        subprocess.run(["git", "add", "."])
+        subprocess.run(["git", "commit", "-m", commit_message])
+make_commits()
