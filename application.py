@@ -19,4 +19,15 @@ def create_project_structure():
             # Crée un fichier .gitkeep dans les dossiers vides pour qu'ils soient suivis
             with open(os.path.join(folder_path, ".gitkeep"), 'w') as f:
                 pass
-create_project_structure()
+
+def create_initial_files():
+
+    files = ["LICENSE", "Makefile", "README.md", ".gitignore",
+             "requirements.txt"]
+
+    for file in files:
+        file_path = os.path.join(directory, file)
+        with open(file_path, 'w') as f:
+            file_content = ''
+            f.write(file_content)
+create_initial_files()
