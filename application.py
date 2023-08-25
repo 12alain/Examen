@@ -49,7 +49,7 @@ def add_specific_files():
     if not os.path.exists("src/utils.py"):
         with open("src/utils.py", "w") as utils_file:
             utils_file.write("")
-add_specific_files()
+
 
 def commit_changes(commit_message):
     subprocess.run(["git", "add", "."])
@@ -58,21 +58,26 @@ def commit_changes(commit_message):
 def make_commits():
     create_project_structure()
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "commit 1"])
+    subprocess.run(["git", "commit", "-m", "commit1"])
+    subprocess.run(["git", "push", "-u", "origin", "main"])
     create_initial_files()
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-m", "commit2"])
+    subprocess.run(["git", "push", "-u", "origin", "main"])
     add_specific_files()
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-m", "commite3"])
+    subprocess.run(["git", "push", "-u", "origin", "main"])
     if not os.path.exists("requirement.txt"):
         with open("requirement.txt", "w") as readme_file:
             readme_file.write("#  fichier contenant la liste des dépendances du projets.")
             subprocess.run(["git", "add", "."])
             subprocess.run(["git", "commit", "-m", "commite4"])
+            subprocess.run(["git", "push", "-u", "origin", "main"])
     if not os.path.exists("README.md"):
         with open("README.md", "w") as readme_file:
             readme_file.write("# Mon Projet d'Analyse de Données\n\nRemplissez ici la description de votre projet.")
             subprocess.run(["git", "add", "."])
             subprocess.run(["git", "commit", "-m", "commite5"])
+            subprocess.run(["git", "push", "-u", "origin", "main"])
 make_commits()
