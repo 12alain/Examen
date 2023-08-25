@@ -30,4 +30,23 @@ def create_initial_files():
         with open(file_path, 'w') as f:
             file_content = ''
             f.write(file_content)
-create_initial_files()
+
+def add_specific_files():
+
+    # verifiez si les dossiers existe deja 
+    os.makedirs('notebooks', exist_ok=True)
+    # Ajoutez une cellule de code au notebook et remplissage du fichier main.ipynb du notebook
+    notebook = new_notebook()
+    code_source = "print('Hello, world!')"
+    cell = new_code_cell(source=code_source)
+    notebook.cells.append(cell)
+    main_notebook_path = os.path.join(directory, "notebooks/main.ipynb")
+    if not os.path.exists(main_notebook_path):
+    
+        with open(main_notebook_path, "w") as main_notebook_file:
+            nbformat.write(notebook,main_notebook_file)
+    # ajout du fichier utils.py
+    if not os.path.exists("src/utils.py"):
+        with open("src/utils.py", "w") as utils_file:
+            utils_file.write("")
+add_specific_files()
