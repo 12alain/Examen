@@ -58,11 +58,11 @@ def commit_changes(commit_message):
 def make_commits():
     create_project_structure()
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "commit1"])
+    subprocess.run(["git", "commit", "-m", "creation de la structure du projet"])
     subprocess.run(["git", "push", "-u", "origin", "main"])
     create_initial_files()
     subprocess.run(["git", "add", "."])
-    subprocess.run(["git", "commit", "-m", "commit2"])
+    subprocess.run(["git", "commit", "-m", " creation des fichiers "])
     subprocess.run(["git", "push", "-u", "origin", "main"])
     add_specific_files()
     subprocess.run(["git", "add", "."])
