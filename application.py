@@ -56,4 +56,6 @@ def make_commits():
         commit_message = f"Commit {i+1}"
         subprocess.run(["git", "add", "."])
         subprocess.run(["git", "commit", "-m", commit_message])
+        subprocess.run(["git", "push", "-u", "origin", "main"])
+
 make_commits()
