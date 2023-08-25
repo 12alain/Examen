@@ -55,9 +55,22 @@ def commit_changes(commit_message):
     subprocess.run(["git", "add", "."])
     subprocess.run(["git", "commit", "-m", commit_message])
 
-def make_commits(num_commits):
-    for i in range(num_commits):
-        commit_message = f"Commit {i+1}"
-        commit_changes(commit_message)
-        subprocess.run(["git", "push", "-u", "origin", "main"])
-make_commits(5)
+def make_commits():
+    create_project_structure()
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", "commit 1"])
+    create_initial_files()
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", "commit2"])
+    add_specific_files()
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", "commite3"])
+    if not os.path.exists("requirement.txt"):
+        with open("requirement.txt", "w") as readme_file:
+            readme_file.write("#  fichier contenant la liste des dépendances du projets.")
+            subprocess.run(["git", "add", "."])
+            subprocess.run(["git", "commit", "-m", "commite4"])
+    if not os.path.exists("README.md"):
+        with open("README.md", "w") as readme_file:
+            readme_file.write("# Mon Projet d'Analyse de Données\n\nRemplissez ici la description de votre projet.")
+make_commits()
