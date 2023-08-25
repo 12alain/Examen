@@ -71,13 +71,13 @@ def make_commits():
     if not os.path.exists("requirement.txt"):
         with open("requirement.txt", "w") as readme_file:
             readme_file.write("#  fichier contenant la liste des dépendances du projets.")
-            subprocess.run(["git", "add", "."])
-            subprocess.run(["git", "commit", "-m", "commite4"])
-            subprocess.run(["git", "push", "-u", "origin", "main"])
-    if not os.path.exists("README.md"):
-        with open("README.md", "w") as readme_file:
-            readme_file.write("# Mon Projet d'Analyse de Données\n\nRemplissez ici la description de votre projet.")
-            subprocess.run(["git", "add", "."])
-            subprocess.run(["git", "commit", "-m", "commite5"])
-            subprocess.run(["git", "push", "-u", "origin", "main"])
+        subprocess.run(["git", "add", "."])
+        subprocess.run(["git", "commit", "-m", "commite4"])
+        subprocess.run(["git", "push", "-u", "origin", "main"])
+    if not os.path.exists("L"):
+        with open("LICENSE", "w") as readme_file:
+            readme_file.write("ici nous avons les conditions de lience.")
+        subprocess.run(["git", "add", "."])
+        subprocess.run(["git", "commit", "-m", "commite5"])
+        subprocess.run(["git", "push", "-u", "origin", "main"])
 make_commits()
