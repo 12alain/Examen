@@ -51,11 +51,13 @@ def add_specific_files():
             utils_file.write("")
 add_specific_files()
 
-def make_commits():
-    for i in range(5):  # Change 5 to the number of commits you want
-        commit_message = f"Commit {i+1}"
-        subprocess.run(["git", "add", "."])
-        subprocess.run(["git", "commit", "-m", commit_message])
-        subprocess.run(["git", "push", "-u", "origin", "main"])
+def commit_changes(commit_message):
+    subprocess.run(["git", "add", "."])
+    subprocess.run(["git", "commit", "-m", commit_message])
 
-make_commits()
+def make_commits(num_commits):
+    for i in range(num_commits):
+        commit_message = f"Commit {i+1}"
+        commit_changes(commit_message)
+        subprocess.run(["git", "push", "-u", "origin", "main"])
+make_commits(5)
